@@ -33,7 +33,22 @@
                     }
                 break;
             }
-            return res ?"You won" :"You lost";
+            return res;
+        }
+        function game(){
+                let computerScore=0;
+                let playerScore=0;
+                for( let i = 0 ; i< 5 ; i++){
+                    let playerChoice = prompt("Enter your Choice ('Rock , Paper , Scissors')");
+                    while(playerChoice!='Rock'&&playerChoice!='Paper'&&playerChoice!='Scissors'){
+                       playerChoice=prompt("plz Enter your Choice from those ('Rock , Paper , Scissors')");
+                    }
+                    let computerChoice=computerPlay();
+                    let res=playRound(playerChoice,computerChoice);
+                    res?playerScore++:computerScore++;
+                }
+                let answer=playerScore==computerScore?"Draw":playerScore>computerScore?"You Won":"You lost";
+                alert(`your score = ${playerScore}\nComputer score = ${computerScore}\n ${answer}`);
         }
     </script>    
 </body>
