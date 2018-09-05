@@ -46,9 +46,11 @@
                     let computerChoice=computerPlay();
                     let res=playRound(playerChoice,computerChoice);
                     res?playerScore++:computerScore++;
+                    let RoundResult=res?"You won this round":"Computer won this round"
+                    console.log(RoundResult);
                 }
                 let answer=playerScore==computerScore?"Draw":playerScore>computerScore?"You Won":"You lost";
-                alert(`your score = ${playerScore}\nComputer score = ${computerScore}\n ${answer}`);
+                alert(`your score = ${playerScore}\nComputer score = ${computerScore}\n${answer}`);
         }
     </script>    
 </body>
