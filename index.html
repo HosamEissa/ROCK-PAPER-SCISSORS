@@ -10,6 +10,31 @@
             let choice = Math.floor(Math.random()*3)
             return !choice?"Rock":choice==1 ? "Paper":"Scissors";
         }
+        function playRound(playerSelection,computerSelection){
+            if(playerSelection==computerSelection)
+            {
+                return "draw";
+            }
+            let res=true;
+            switch(playerSelection){
+                case "Rock":
+                    if(computerSelection=="Paper"){
+                        res=false;    
+                    }
+                    break;
+                case "Paper":
+                    if(computerSelection=="Scissors"){
+                        res=false;        
+                    }
+                    break;
+                case "Scissors":
+                    if(computerSelection=="Rock"){
+                        res=false;
+                    }
+                break;
+            }
+            return res ?"You won" :"You lost";
+        }
     </script>    
 </body>
 </html>>
